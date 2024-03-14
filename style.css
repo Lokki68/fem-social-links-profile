@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400,600,700&display=swap');
+
+:root {
+  --green: hsl(75, 94%, 57%);
+
+  --dark-grey: hsl(0, 0%, 12%);
+  --off-black: hsl(0, 0%, 8%);
+  --grey: hsl(0, 0%, 20%);
+  --white: hsl(0, 0%, 100%);
+}
+
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--off-black);
+  min-width: 375px;
+  max-width: 1440px;
+  font-family : Inter, sans-serif;
+  color: var(--white);
+
+  p {
+    font-size: 14px;
+  }
+
+  a, a:focus, a:visited {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+.profileCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  width: 90%;
+  background-color: var(--dark-grey);
+  margin: 50px auto;
+  padding: 40px 30px;
+  border-radius: 15px;
+
+  @media (min-width: 768px) {
+    width: 35%;
+  }
+}
+
+.profileCard__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & .img_container {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  & .infos_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    
+    & .infos_container__perso {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+
+      p {
+        font-weight: 500;
+        color: var(--green)
+      }
+    }
+
+    & .infos_container__description {
+      margin-top: 16px;
+
+    }
+  }
+}
+
+.profileCard__links {
+  margin-top: 30px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+
+  & .btn {
+    width: 100%;
+    height: 45px;
+    background-color: var(--grey);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    & a {
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    &:hover {
+      background-color: var(--green);
+
+      & a {
+        color: var(--grey)
+      }
+    }
+  }
+}
+
+
